@@ -6,7 +6,7 @@ from sklearn import linear_model
 data = pd.read_csv('countries.csv')
 data_mex = data[data.country == 'Mexico']
 
-x = np.asarray(data_mex[['Mexico']]) 
+x = np.asarray(data_mex[['year']]) 
 y = np.asarray(data_mex[['lifeExp']]) 
 
 model = linear_model.LinearRegression() 
