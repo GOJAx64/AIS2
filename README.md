@@ -3,5 +3,13 @@ Machine Learning course with Python
 
 
 ## Topics
-- Linear Regression
-- Polynomial Regression ( and pipelines )
+- 01-Regression
+    - Linear Regression
+    - Polynomial Regression ( and pipelines )
+    - Multiple Linear Regression
+    - Regularization ( Lassso, Ridge, Elastic-Net )
+    - Desicion Tree
+    - Support Vector Machine
+    - KNN
+    - Kernel Ridge
+    - Neural Network
