@@ -32,16 +32,21 @@ xtrain, xtest, ytrain, ytest = train_test_split(x,y)
 #Entrenar regresor lineal
 #model =  linear_model.LinearRegression()
 model = Pipeline([('poly', PolynomialFeatures(degree=3, include_bias=False)), 
-                  ('scaler', StandardScaler()), 
-                  ('reg_lin', Ridge(alpha=-1e-05))])#0.1
+                 ('scaler', StandardScaler()), 
+                 ('reg_lin', Ridge(alpha=1e-05))])#0.1
 
 model.fit(x, y)
 
 print('Train R2: ', model.score(xtrain, ytrain))
 print('Test R2: ', model.score(xtest, ytest))
 
-#Sacar coeficientes
+
+y_predict = model.predict( x[0,:].reshape(-1,18) )
+print(int(y_predict))
+
+
 '''
+#Sacar coeficientes
 coef = model.coef_
 
 #Ordenar los coheficientes segun sumagnitud
@@ -52,7 +57,7 @@ columns = (data.drop(["id", 'date', 'price'], axis=1)).columns
 df['feauture'] = columns
 df['coef'] = abs(coef)
 
-df = df.sort_values(by='coef')
+df = df.sort_values(by='coef', ascending=[False])
 #Reportar el nombre de las variables ( de la mas  a le menos importante )
+print(df)
 '''
-
