@@ -21,7 +21,7 @@ xtrain, xtest, ytrain, ytest = train_test_split(x,y)
 
 from sklearn.tree import DecisionTreeRegressor
 
-model = DecisionTreeRegressor(min_samples_leaf=0.05)
+model = DecisionTreeRegressor(min_samples_leaf=0.01)
 model.fit(xtrain, ytrain)
 
 print('Train: ',model.score(xtrain, ytrain))

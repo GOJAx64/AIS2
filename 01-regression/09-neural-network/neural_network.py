@@ -21,7 +21,7 @@ xtrain, xtest, ytrain, ytest = train_test_split(x,y)
 
 from sklearn.neural_network import MLPRegressor
 
-model = MLPRegressor(hidden_layer_sizes=(120,60,10))
+model = MLPRegressor(hidden_layer_sizes=(120,60,10), max_iter=300)
 model.fit(xtrain, ytrain)
 
 print('Train: ',model.score(xtrain, ytrain))
